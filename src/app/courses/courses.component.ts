@@ -27,9 +27,14 @@ export class CoursesComponent implements OnInit {
     this.activeRoute.queryParamMap.subscribe((data)=>{
         this.searchString=data.get('search');
 
-        if(this.searchString===undefined || this.searchString==='' ||  this.searchString===null){
-          this.AllCourses=this.coursesService.courses;
-        }else{
+         if(this.searchString===undefined || this.searchString==='' ||  this.searchString===null){
+        //  this.coursesService.getAllCourses().subscribe((data:Course[])=>{
+        //   this.AllCourses=data;
+        //  });
+        this.AllCourses= this.activeRoute.snapshot.data ['courses'];
+        }
+        else
+        {
           this.AllCourses=this.coursesService.courses.
           filter(x=>x.title.toLowerCase().
           includes(this.searchString.toLowerCase()));

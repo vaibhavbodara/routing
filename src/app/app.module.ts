@@ -1,6 +1,7 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, } from '@angular/core';
+import { BrowserModule, } from '@angular/platform-browser';
 import { Routes} from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,11 +47,13 @@ const routes:Routes=[
     ServicesComponent,
     ContactUsComponent,
     CoursedetailComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
     // RouterModule.forRoot(routes)
   ],
   providers: [],
